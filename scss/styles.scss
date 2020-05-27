@@ -1,0 +1,54 @@
+// variables
+$color-primary: rgb(218, 126, 218);
+
+// scss
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  margin: 30px;
+  background-color: $color-primary;
+}
+
+.navigation {
+  list-style: none;
+  li {
+    display: inline-block;
+    margin-left: 30px;
+    &:first-child {
+      margin: 0;
+    }
+  }
+  a:link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-primary;
+  }
+  // li:first-child {
+  //     margin: 0;
+  // }
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  float: right;
+  text-decoration: none;
+  border-radius: 100px;
+  text-transform: uppercase;
+  width: 150px;
+}
+
+.btn-main {
+  &:link {
+    background-color: red;
+  }
+  &:hover {
+      background-color: darken($color: yellow, $amount: 15%)
+  }
+}

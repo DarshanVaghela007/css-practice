@@ -1,0 +1,206 @@
+/* By defualt there are some margin and padding available in the browser  */
+*,
+*::after,
+*::before {
+    /* here, universal selector selects only css selectors not pseudo selectors so we have added after and before here */
+  margin: 0;
+  padding: 0;
+  /* By defualt css will calculate border and padding in the element for ex: if you specify width: 100px padding: 5px and
+    border: 1px then total width of the element will be 100 + 5px right + 5px left + 1px border right + 
+    1px border left = 512px If you don't want this behaviour use border-box property of box-sizing */
+    /* box-sizing: border-box; */
+    /* this makes this box-sizing propery inheritable: so basically we don't give border-box directly here bcuz sometimes
+    we want to use other box-sizing property to some element. NOTE: here this will apply to all elements  */
+  box-sizing: inherit;
+}
+html {
+    /* here, font-size in px is bad practice, think about user wh0 changed the defualt font-size of browser from 16px to 20
+    just bcuz they don't want to see 16px font-size so that's why always use % here.
+    browserdefualt px -> 16px */
+    font-size: 62.5%;
+}
+body {
+  font-family: "Tenali Ramakrishna", sans-serif;
+  /* font-size: 16px; */
+  font-weight: 500;
+  line-height: 1.5;
+  color: #777;
+  /* margin: 25px; */
+  margin: 2.5rem;
+  box-sizing: border-box;
+}
+
+.header {
+  position: relative;
+  /* vh -> viewport height : 95% at every viewport */
+  height: 95vh;
+  /* here, we have specified where linear gradient go: hence to => right bottom */
+  /* here, we have given second parameter of bg-image to url, so first liner-gradient and below that image will be placed */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(27, 40, 156, 0.7),
+      rgba(73, 85, 192, 0.7),
+      rgba(191, 196, 245, 0.7)
+    ),
+    url(../images/home.jpg);
+  background-size: cover;
+  /* background-position -> top means it will not be croped or scroll from the top */
+  background-position: top;
+  /* clip-path set the design/shape to the element - we can specify any method like circle() polygon() etc */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.header-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header-logo {
+  position: absolute;
+  /* top: 35px; */
+  top: 3.5rem;
+  /* left: 40px; */
+  left: 4rem;
+}
+.btn-section {
+    text-align: center;
+}
+.logo {
+  color: white;
+  /* height: 75px; */
+  height: 7.5rem;
+}
+
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+  /* to remove the shake effect after animation is complete: but it's not working for me */
+  backface-visibility: hidden;
+}
+.heading-primary-main {
+  /* span is inline element so if we give display block to span element it will break the line */
+  display: block;
+  /* letter-spacing: 35px; */
+  letter-spacing: 3.5rem;
+  /* font-size: 60px; */
+  font-size: 6rem;
+  animation: header-main-slide-effect;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;   
+}
+.heading-primary-sub {
+    /* important: if display is not set to block or block-inline animation property transform will not work */
+  display: block;
+  /* font-size: 40px; */
+  font-size: 4rem;
+  /* letter-spacing: 14.6px; */
+  letter-spacing: calc(1.4rem + 0.6px);
+  animation: header-sub-slide-effect 1s ease-out;
+  /* margin-bottom: 40px; */
+  margin-bottom: 4rem;
+}
+
+@keyframes header-main-slide-effect {
+  from {
+    opacity: 0;
+    /* transform: translateX(-100px); */
+    transform: translateX(-10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes header-sub-slide-effect {
+    from {
+        opacity: 0;
+        /* transform: translateX(100px); */
+        transform: translateX(10rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes button-move-up-effect {
+    from {
+        opacity: 0;
+        /* transform: translateY(45px); */
+        transform: translateY(4.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:link, .btn:visited {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* padding: 15px 40px; */
+    padding: 1.5rem 4rem;
+    /* here, inline-block is important : what it will do is make it's own height and wight around it and don't overlap other
+    element. */
+    display: inline-block;
+    /* border-radius: 25px; */
+    border-radius: 10rem;
+    /* second way for animation instead of keyframes */
+    transition: all .2s;
+    position: relative;
+   
+}
+
+.btn-white {
+    background-color: #fff;
+    color: black;
+}
+
+.btn:hover {
+    /* transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.5); */
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.5);
+}
+
+.btn:active {
+    /* transform: translateY(-1px);
+    box-shadow: 0 5px 5px rgba(0,0,0,.8); */
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem .5rem rgba(0,0,0,.8);
+}
+
+.btn::after {
+    /* this property is must to use after */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /* border-radius: 25px; */
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.btn-white::after {
+    color: black;
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    /* here we have specified .5s delay to animation so, it will wait for .5 second and then animation work! but 
+    till that time button has no effect and it's in the original place. but if we want to place that button in animation
+    starting place before animation applied then use animation-fill-mode: backwords property  */
+    animation: button-move-up-effect 1s ease-out .5s;
+    animation-fill-mode: backwards;
+}
