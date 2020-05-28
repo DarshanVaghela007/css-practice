@@ -1,0 +1,32 @@
+@keyframes header-main-slide-effect {
+  from {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes header-sub-slide-effect {
+  from {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes button-move-up-effect {
+  from {
+    opacity: 0;
+    transform: translateY(4.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

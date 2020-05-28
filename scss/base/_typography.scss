@@ -1,0 +1,54 @@
+.heading-primary {
+  color: $white-color;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+
+  &-main {
+    display: block;
+    letter-spacing: 3.5rem;
+    font-size: 6rem;
+    animation: header-main-slide-effect;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+  }
+
+  &-sub {
+    display: block;
+    font-size: 4rem;
+    letter-spacing: calc(1.4rem + 0.6px);
+    animation: header-sub-slide-effect 1s ease-out;
+    margin-bottom: 4rem;
+  }
+}
+
+.heading-secondary {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  display: inline-block;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 5px;
+  transition: all .2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(2deg) scale(1.05);
+    text-shadow: .5rem 1rem .7rem rgba($black-color, .5);
+  }
+}
+
+.heading-tertiary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  text-align: justify;
+  font-weight: 300;
+  font-size: 2rem;
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}

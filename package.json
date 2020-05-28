@@ -1,0 +1,24 @@
+{
+  "name": "css-and-scss",
+  "version": "1.0.0",
+  "description": "practice css and scss from udemy course",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass scss/main.scss css/main.css -w",
+    "float-layout": "node-sass float-layout/float-grid-layout.scss float-layout/styles.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarshanVaghela007/css-practice.git"
+  },
+  "author": "Darshan Vaghela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarshanVaghela007/css-practice/issues"
+  },
+  "homepage": "https://github.com/DarshanVaghela007/css-practice#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {}
+}

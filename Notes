@@ -1,0 +1,9 @@
+1. use % over px for layout related lengths
+2. responsive images
+3. use media queries
+
+NOTE: layout styles
+- simple float layout
+  : to set container at center use margin: 0 auto when you want to center block element under another block element
+- flex box layout
+- css grid layout

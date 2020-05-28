@@ -1,0 +1,91 @@
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+$grid-font-size: 1.6rem;
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        // clear both means clear both float : float left and float right
+        clear: both;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+.grid-system {
+    font-size: $grid-font-size;
+}
+.row {
+    max-width: $grid-width;
+    color: black;
+    background-color: #eee;
+    margin: 0 auto;
+    @include clearfix;
+    &:first-child {
+        margin-top: 3rem;
+    }
+    // &:last-child {
+    //     margin-bottom: 0;
+    // }
+    // make margin-bottom of row at everywhere except last child
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    // attribute selector - any attribute
+    // here ^(caret) symbol represents "starts-with" so here, it selects all elements which has class name which starts
+    // "col-"
+    [class^="col-"] {
+        background-color: peru;
+        padding: .5rem 0;
+        float: left;
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    // others
+    // [class*="col-"] -> means select element with class that cointains "col-" in anywhere in the class name
+    // [class$="col-"] -> means select element with class that ends with "col-"
+
+    .col {
+        &-1-of-2 {
+            width: calc((100% - #{$gutter-horizontal}) / 2);
+            // background-color: peru;
+            // padding: .5rem 0;
+            // float property is used to place items side by side
+            // when you use float property then height of that element (here first row) becomes 0 so to fix that use 
+            // clearfix for that.
+            // float: left;
+            // &:not(:last-child) {
+            //     margin-right: $gutter-horizontal;
+            // }
+        }
+
+        &-1-of-3 {
+            // padding: .5rem 0;
+            width: calc((100% - (2 * #{$gutter-horizontal})) / 3);
+            // background-color: peru;
+            // float: left;
+            // &:not(:last-child) {
+            //     margin-right: $gutter-horizontal;
+            // }
+        }
+
+        &-2-of-3 {
+            // padding: .5rem 0;
+            width: calc(#{$gutter-horizontal} + 2 * ((100% - (2 * #{$gutter-horizontal})) / 3));
+            // background-color: peru;
+            // &:not(:last-child) {
+            //     margin-right: $gutter-horizontal;
+            // }
+        }
+    }
+}

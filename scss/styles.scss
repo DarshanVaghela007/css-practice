@@ -7,9 +7,34 @@ $color-primary: rgb(218, 126, 218);
   padding: 0;
 }
 
+@mixin clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@mixin style-link-text($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@function my-function($a, $b) {
+  @return $a/$b;
+}
+
 nav {
-  margin: 30px;
+  // margin: 30px;
+  // for converting into pixels
+  margin: my-function(60, 2) * 1px;
   background-color: $color-primary;
+  &::after {
+    @include clearfix;
+  }
+}
+
+%btn-link-placeholder {
+
 }
 
 .navigation {
@@ -22,33 +47,36 @@ nav {
     }
   }
   a:link {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $color-primary;
+    // text-decoration: none;
+    // text-transform: uppercase;
+    @include style-link-text($color-primary);
   }
   // li:first-child {
   //     margin: 0;
   // }
 }
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+// clearfix is used to clear floated content within the container
 
 .button {
   float: right;
-  text-decoration: none;
+  // text-decoration: none;
+  // text-transform: uppercase;
+  @include style-link-text(red);
   border-radius: 100px;
-  text-transform: uppercase;
+
   width: 150px;
 }
 
 .btn-main {
   &:link {
+    color: white;
     background-color: red;
   }
   &:hover {
-      background-color: darken($color: yellow, $amount: 15%)
+    color: blue;
+    background-color: darken($color: yellow, $amount: 15%);
   }
 }
+
+
+// note: @include - @mixin includes the styles to the selector and @extend - %placeholder includes selector to the css.
