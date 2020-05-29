@@ -57,3 +57,32 @@
       animation-fill-mode: backwards;
     }
   }
+
+  .button-text {
+    &:link, &:visited {
+      text-decoration: none;
+      font-size: 2rem;
+      color: $white-color;
+      display: inline-block;
+      padding: .8rem 2rem .4rem;
+      border-radius: 10rem;
+      transition: all .3s;
+      background-color: $color-primary;
+    }
+
+    &:hover {
+      background-color: $color-primary-dark;
+      color: $white-color;
+      box-shadow: 0 1rem 2rem rgba($black-color, .2);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      box-shadow: 0 .5rem 1rem rgba($black-color, .5);
+      transform: translateY(0);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }

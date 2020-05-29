@@ -1,0 +1,33 @@
+.feature {
+
+    &-box {
+        background-color: rgba($white-color, $alpha: .75);
+        padding: 2.5rem;
+        text-align: center;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($black-color, $alpha: .3);
+        transition: all .2s;
+        height: 45rem;
+        width: 120%;
+        // we have skey -4.5 to section so you can do +4.5 here, but it's not gonna work!
+        // transform: skewY(4.5deg);
+        &-icon {
+            width: 40%;
+    
+        }
+    
+        &:hover {
+            transform: translateY(-1.5rem) scale(1.05);
+            box-shadow: 0 2.5rem 4rem rgba($black-color, $alpha: .5);
+        }
+    
+        &-text {
+            font-size: 2rem;
+        }
+    }
+
+    &-heading-tertiary {
+        font-size: 2.5rem;
+    }
+   
+}
