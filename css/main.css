@@ -93,13 +93,16 @@ body {
 .u-margin-bottom-2 {
   margin-bottom: 1.5rem; }
 
+.u-margin-top-8 {
+  margin-top: 8rem; }
+
 .btn:link, .btn:visited {
   font-size: 2rem;
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 10rem;
+  border-radius: 15rem;
   transition: all 0.2s;
   position: relative; }
 
@@ -110,8 +113,13 @@ body {
   background-color: #fff;
   color: #000; }
   .btn-white::after {
-    color: #000;
     background-color: #fff; }
+
+.btn-purple {
+  background-color: #1b289c;
+  color: #fff; }
+  .btn-purple::after {
+    background-color: #1b289c; }
 
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -184,6 +192,8 @@ body {
     width: calc((100% - 8rem) / 2); }
   .row .col-1-of-4 {
     width: calc((100% - (3 * 8rem)) / 4); }
+  .row .col-1-of-3 {
+    width: calc((100% - (2 * 8rem)) / 3); }
 
 .composition {
   position: relative; }
@@ -232,12 +242,158 @@ body {
 .feature-heading-tertiary {
   font-size: 2.5rem; }
 
+.card {
+  perspective: 140rem;
+  -moz-perspective: 130rem;
+  height: 50rem;
+  position: relative; }
+  .card-side {
+    height: 50rem;
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    overflow: hidden; }
+    .card-side-front {
+      background-color: #fff; }
+    .card-side-back {
+      transform: rotateY(180deg); }
+      .card-side-back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card-side-back-2 {
+        background-image: linear-gradient(to right bottom, #959cdf, #1b289c); }
+      .card-side-back-3 {
+        background-image: linear-gradient(to right bottom, #29ff69, #166330); }
+  .card:hover .card-side-front {
+    transform: rotateY(-180deg); }
+  .card:hover .card-side-back {
+    transform: rotateY(0deg); }
+  .card-picture {
+    background-size: cover;
+    height: 25rem;
+    background-blend-mode: soft-light;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card-picture-1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../images/shiva-avatar-1.jpg); }
+    .card-picture-2 {
+      background-image: linear-gradient(to right bottom, #959cdf, #1b289c), url(../images/shiva-avatar-2.jpg); }
+    .card-picture-3 {
+      background-image: linear-gradient(to right bottom, #29ff69, #166330), url(../images/shiva-avatar-3.jpg); }
+  .card-heading {
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 1rem;
+    text-align: right;
+    width: 75%; }
+    .card-heading-span {
+      padding: 0rem 1.5rem;
+      box-decoration-break: clone; }
+      .card-heading-span-1 {
+        background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+      .card-heading-span-2 {
+        background-image: linear-gradient(to right bottom, rgba(149, 156, 223, 0.85), rgba(27, 40, 156, 0.85)); }
+      .card-heading-span-3 {
+        background-image: linear-gradient(to right bottom, rgba(41, 255, 105, 0.85), rgba(22, 99, 48, 0.85)); }
+  .card-details {
+    padding: 3rem; }
+    .card-details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card-details ul li {
+        text-align: center;
+        font-size: 3rem;
+        padding: 1rem; }
+        .card-details ul li:not(:last-child) {
+          border-bottom: 2px solid #eee; }
+  .card-cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    text-align: center; }
+  .card-detail-box {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+    font-weight: 500; }
+
+.devotee {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.8rem;
+  transform: skewX(-12deg); }
+  .devotee-shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative; }
+  .devotee-image {
+    width: 100%;
+    transform: scale(1.2);
+    transition: all .5s; }
+  .devotee:hover .devotee-image {
+    transform: scale(1);
+    opacity: .85;
+    filter: blur(1px) brightness(75%); }
+  .devotee-text {
+    transform: skewX(12deg); }
+  .devotee-caption {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; }
+  .devotee:hover .devotee-caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .8; }
+  .bg-video-content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 .header {
   position: relative;
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(27, 40, 156, 0.7), rgba(73, 85, 192, 0.7), rgba(149, 156, 223, 0.7)), url(../images/home.jpg);
   background-size: cover;
   background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
   .header-box {
     position: absolute;
@@ -303,9 +459,18 @@ body {
 
 .section-feature {
   padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, #1b289c, rgba(73, 85, 192, 0.8), rgba(149, 156, 223, 0.6)), url(../../images/feature-section.jpg);
+  background-image: linear-gradient(to right bottom, #1b289c, rgba(73, 85, 192, 0.8), rgba(149, 156, 223, 0.6)), url(../images/feature-section.jpg);
   background-size: cover;
   transform: skewY(-4.5deg);
   margin-top: -7rem; }
   .section-feature > * {
     transform: skewY(4.5deg); }
+
+.section-avatar {
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  margin-top: -15vh; }
+
+.section-great-devotees {
+  padding: 15rem 0;
+  position: relative; }

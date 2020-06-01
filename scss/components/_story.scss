@@ -1,0 +1,63 @@
+.devotee {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color: $black-color, $alpha: .2);
+    background-color: rgba($white-color, .85);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: 1.8rem;
+    transform: skewX(-12deg);
+   
+
+   
+
+    &-shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        // shape-outside only works with float property and element must have define width and height
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);  
+        position: relative; 
+    }
+
+    &-image {
+        width: 100%;
+        transform: scale(1.2);
+        transition: all .5s;
+    }
+
+    &:hover &-image {
+        transform: scale(1);
+        opacity: .85;
+        filter: blur(1px) brightness(75%);
+    }
+
+    &-text {
+        transform: skewX(12deg);
+    }
+
+    &-caption {
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, 25%);
+        color: $white-color;
+        text-transform: uppercase;
+        font-size: 3rem;
+        text-align: center;
+        font-weight: 700;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &-caption {
+        opacity: 1;
+        
+        transform: translate(-50%, -50%);
+    }
+}

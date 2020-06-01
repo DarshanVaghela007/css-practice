@@ -1,0 +1,200 @@
+// [class$='-side'] {
+//     height: 50rem;
+//     transition: all 1s ease;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     // while we are giving the position property! then it tries to fit into its content width so we must need to give
+//     // width 100%;
+//     width: 100%;
+//     backface-visibility: hidden;
+//     box-shadow: 0 1.5rem 3rem rgba($color: $black-color, $alpha: .4)
+// }
+
+// [class*='front'] {
+//     background-color: $white-color;
+// }
+
+// [class*='back'] {
+//     background-color: green;
+//     transform: rotateY(180deg);
+// }
+
+// &:hover [class*="front"]{
+//     transform: rotateY(180deg);
+//     box-shadow: 0 1.5rem 2rem rgba($color: $black-color, $alpha: .8)
+// }
+
+// &:hover [class*="back"] {
+//     transform: rotateY(0deg);
+//     box-shadow: 0 1.5rem 2rem rgba($color: $black-color, $alpha: .8)
+// }
+
+.card {
+  perspective: 140rem;
+  -moz-perspective: 130rem;
+  height: 50rem;
+  position: relative;
+  // here perspective only work if we give it to parent element and we need to see effect in child element. so that's why
+  // i give the color, height to "-side". and not to "card".
+  &-side {
+    height: 50rem;
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 1.5rem 3rem rgba($color: $black-color, $alpha: 0.3);
+    border-radius: 3px;
+    // image is above the its parent hence border radius is not visible, so to fix that use overflow hidden
+    overflow: hidden;
+    &-front {
+      background-color: $white-color;
+    }
+
+    &-back {
+      transform: rotateY(180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+          );
+      }
+
+
+      &-3 {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+          );
+      }
+    }
+  }
+
+  &:hover &-side-front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &-side-back {
+    transform: rotateY(0deg);
+  }
+
+  // Front side styling
+  &-picture {
+    background-size: cover;
+    height: 25rem;
+    background-blend-mode: soft-light;
+    // webkit is used for different browser, and it's always before the original property
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    // border-top-left-radius: 2rem;
+    // border-top-right-radius: 2rem;
+    &-1 {
+      // here, the original path is ../../images but we use only ../ bcuz after compilation our targeted css file only
+      // need that much path.
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../images/shiva-avatar-1.jpg);
+    }
+    &-2 {
+      background-image:linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      ), url(../images/shiva-avatar-2.jpg);
+    }
+    &-3 {
+        
+      background-image:linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      ), url(../images/shiva-avatar-3.jpg);
+    }
+  }
+
+  &-heading {
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $white-color;
+    position: absolute;
+    top: 12rem;
+    right: 1rem;
+    text-align: right;
+    width: 75%;
+
+    &-span {
+      padding: 0rem 1.5rem;
+      box-decoration-break: clone;
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.85),
+          rgba($color-secondary-dark, 0.85)
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-light, 0.85),
+            rgba($color-primary-dark, 0.85)
+          );
+      }
+      &-3 {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-tertiary-light, 0.85),
+            rgba($color-tertiary-dark, 0.85)
+          );
+      }
+    }
+  }
+  &-details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 3rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 2px solid #eee;
+        }
+      }
+    }
+  }
+  // back part
+
+  &-cta {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 75%;
+      text-align: center;
+  }
+
+  &-detail-box {
+      font-size: 2rem;
+      text-align: justify;
+      margin-bottom: 2rem;
+      font-weight: 500;
+  }
+}

@@ -6,7 +6,7 @@
       text-decoration: none;
       padding: 1.5rem 4rem;
       display: inline-block;
-      border-radius: 10rem;
+      border-radius: 15rem;
       transition: all 0.2s;
       position: relative;
     }
@@ -19,11 +19,18 @@
       background-color: $white-color;
       color: $black-color;
       &::after {
-        color: $black-color;
         background-color: $white-color;
       }
     }
   
+    &-purple {
+      background-color: $color-primary-dark;
+      color: $white-color;
+      &::after {
+        background-color: $color-primary-dark;
+      }
+    }
+
     &:hover {
       transform: translateY(-0.3rem);
       box-shadow: 0 1rem 2rem rgba($black-color, 0.5);
