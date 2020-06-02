@@ -1,0 +1,119 @@
+.form {
+    &-group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+    &-input {
+        // outline: none;
+        font-size: 2rem;
+        // font-family: 'Tenali Ramakrishana', sans-serif;
+        font-family: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: $white-color;
+        border: none;
+        color: inherit;
+        // we created border on focus! so if we don't provide that border here as transparent then it will move up of 3px
+        // when focus is not there then there is no border.
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+        text-decoration: none;
+        transition: all .3s;
+
+        &:required {
+            // outline: none;
+            // border: none;
+            box-shadow: none;
+        }
+
+        &:focus:invalid {
+            outline: none;
+            border-bottom: 3px solid rgb(243, 101, 50);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color: $black-color, $alpha: .1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        // For firefox
+        &::-moz-placeholder {
+            color: #999;
+        }
+        // For chrome, opera, safari
+        &::-webkit-input-placeholder {
+            color: #999;
+        }
+    }
+   
+   
+    &-lable {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .4s;
+       
+    }
+
+    // + => direct sibling selector
+    // ~ => general sibling selector
+    // lable must comes before input
+    &-input:placeholder-shown + &-lable {
+        // here, below both property do the same. but we want to anomate the lable that's why we use opacity
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &-radio-group {
+        width: 49%;
+        display: inline-block;
+        // alternative
+        // float: left;
+    }
+
+    &-radio-lable {
+        font-size: 1.6rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 5rem;
+    }
+
+    &-radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: .5rem solid $color-primary-dark;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary-dark;
+            opacity: 0;
+            transition: opacity .2s;    
+        }
+    }
+
+    // next level thing -> try to do more practice on this as this will be helpfull for you. note that.
+    &-radio-input:checked ~ &-radio-lable &-radio-button::after {
+        opacity: 1;
+    }
+
+    &-radio-input {
+        display: none;
+    }
+}

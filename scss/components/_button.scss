@@ -1,4 +1,7 @@
 .btn {
+  // here only & will make great change: like now we can apply btn class not to only a tag which has link and visited
+  // but we can apply it on button also
+    &,
     &:link,
     &:visited {
       font-size: 2rem;
@@ -9,6 +12,10 @@
       border-radius: 15rem;
       transition: all 0.2s;
       position: relative;
+
+      // chnages for button element -> this class will not work proper with button bcuz we use them in a tag.
+      border: none;
+      cursor: pointer;
     }
   
     &-section {
@@ -41,7 +48,9 @@
       }
     }
   
-    &:active {
+    &:active, &:focus {
+      // focus and outline is for chrome
+      outline: none;
       transform: translateY(-0.1rem);
       box-shadow: 0 0.5rem 0.5rem rgba($black-color, 0.8);
     }

@@ -35,3 +35,30 @@
   padding: 15rem 0;
   position: relative;
 }
+
+.section-contact {
+  padding: 15rem 0;
+  background-image: linear-gradient(to bottom right, $color-primary-light, $color-primary-dark);
+}
+
+.contact {
+
+  &-box {
+    background-image: linear-gradient(105deg, rgba($white-color, .75) 0%,
+    rgba($white-color, .75) 50%,
+     transparent 50%), url(../../images/feature-section.jpg);
+    // same as bg-size: 100%;
+    background-size: cover;
+    background-position: center;
+    // if the height is not mentioned then image will not be seen bcuz initially image must have some height or width.
+    height: 50rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 3.5rem rgba($black-color, .2);
+  }
+
+
+  &-form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

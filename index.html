@@ -315,9 +315,9 @@
         <div class="bg-video">
           <!-- we will not use src attribute of video deirectly, instread of that we will use source tag -->
           <video class="bg-video-content" autoplay muted loop>
-            <source src="images/video.mp4" type="video/mp4">
-              <!-- if video is not loaded / not accepted by browser the this text will be shown -->
-              Your browser is not supported this video!
+            <source src="images/video.mp4" type="video/mp4" />
+            <!-- if video is not loaded / not accepted by browser the this text will be shown -->
+            Your browser is not supported this video!
           </video>
         </div>
         <div class="u-center-text u-margin-bottom-8">
@@ -328,7 +328,11 @@
         <div class="row">
           <div class="devotee">
             <figure class="devotee-shape">
-              <img src="./images/ravana-shiva.jpg" alt="Ravana" class="devotee-image">
+              <img
+                src="./images/ravana-shiva.jpg"
+                alt="Ravana"
+                class="devotee-image"
+              />
               <figcaption class="devotee-caption">
                 Ravana
               </figcaption>
@@ -337,34 +341,97 @@
               <h3 class="heading-tertiary">Ravana</h3>
               <p>
                 Ravana was the greatest devotee of Shiva. He pleased Shiva and
-                had Shiva's Darshan by offering his nine heads. hiva gave the
+                had Shiva's Darshan by offering his nine heads. Shiva gave the
                 Chandrahasa weapon to Ravana. And gave a word to Ravana that ,
-                whenever he desires to see Shiva, Shiva would come for
-                him.
+                whenever he desires to see Shiva, Shiva would come for him.
               </p>
             </div>
           </div>
         </div>
         <div class="row">
-            <div class="devotee">
-              <figure class="devotee-shape">
-                <img src="./images/nandi-shiva.jpg" alt="Nandi" class="devotee-image">
-                <figcaption class="devotee-caption" style="color:black">
-                  Nandi
-                </figcaption>
-              </figure>
-              <div class="devotee-text">
-                <h3 class="heading-tertiary">Nandi</h3>
-                <p>
-                    Nandi (Sanskrit: नन्दि, Tamil: நந்தி, Kannada: ನಂದಿ, Telugu: న౦ది, Odia: ନନ୍ଦି) is the gate-guardian deity of Kailasa, the abode of Lord Shiva. He is usually depicted as a bull, which also serves as the mount to Shiva. 
-                </p>
-              </div>
-             
+          <div class="devotee">
+            <figure class="devotee-shape">
+              <img
+                src="./images/nandi-shiva.jpg"
+                alt="Nandi"
+                class="devotee-image"
+              />
+              <figcaption class="devotee-caption" style="color:black">
+                Nandi
+              </figcaption>
+            </figure>
+            <div class="devotee-text">
+              <h3 class="heading-tertiary">Nandi</h3>
+              <p>
+                Nandi (Sanskrit: नन्दि, Tamil: நந்தி, Kannada: ನಂದಿ, Telugu:
+                న౦ది, Odia: ନନ୍ଦି) is the gate-guardian deity of Kailasa, the
+                abode of Lord Shiva. He is usually depicted as a bull, which
+                also serves as the mount to Shiva.
+              </p>
             </div>
-            <div class="u-center-text u-margin-top-8">
-                <a href="#" class="button-text">Read More &rarr;</a>
-              </div>
           </div>
+          <div class="u-center-text u-margin-top-8">
+            <a href="#" class="button-text">Read More &rarr;</a>
+          </div>
+        </div>
+      </section>
+      <!-- devotee section ends -->
+
+      <!-- contact-section -->
+      <section class="section-contact">
+        <div class="row">
+          <div class="contact-box">
+            <div class="contact-form">
+              <form action="#" class="form">
+                <div class="u-margin-bottom-2">
+                  <h2 class="heading-secondary">
+                    Contact Us
+                  </h2>
+                </div>
+                <div class="form-group">
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-input"
+                    placeholder="Full Name"
+                    required
+                  />
+                  <lable for="name" class="form-lable">Full Name</lable>
+                </div>
+                <div class="form-group">
+                  <input
+                    id="email"
+                    type="email"
+                    class="form-input"
+                    placeholder="Email Address"
+                    required
+                  />
+                  <lable for="email" class="form-lable">Email Address</lable>
+                </div>
+                <div class="form-group">
+                  <div class="form-radio-group">
+                  <!-- Note: there is no way that we can style this radio button. so we must need to create our own radio buttons -->
+                      <input type="radio" class="form-radio-input" id="male" name="gender" checked>
+                      <label for="male" class="form-radio-lable">
+                        <span class="form-radio-button"></span>
+                        Male
+                      </label>
+                  </div>
+                  <div class="form-radio-group">
+                      <input type="radio" class="form-radio-input" id="female" name="gender">
+                      <label for="female" class="form-radio-lable">
+                          <span class="form-radio-button"></span>
+                        Female
+                      </label>
+                  </div>
+                  <div class="form-radio-group u-margin-top-3">
+                    <button type="submit" class="btn btn-purple">Contact &rarr;</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   </body>

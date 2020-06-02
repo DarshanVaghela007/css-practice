@@ -8,9 +8,10 @@
     opacity: .7;
 
     &-content {
-        // below height and wigth will not work as video is gonna fit into aspect ratio
+        // below height and wigth will not work as video is gonna fit into aspect ratio, but for me it's working
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        // object-fit: cover can be worked for firefox but cannot be worked for chrome, but fill worked for both
+        object-fit: fill;
     }
 }
