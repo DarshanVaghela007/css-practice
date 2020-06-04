@@ -14,18 +14,28 @@
   </head>
   <body>
     <div class="navigation">
-      <input type="checkbox" id="navi-toggle" class="navigation-checkbox">
+      <input type="checkbox" id="navi-toggle" class="navigation-checkbox" />
       <label for="navi-toggle" class="navigation-button">
         <span class="navigation-icon">&nbsp;</span>
       </label>
       <div class="navigation-background">&nbsp;</div>
       <nav class="navigation-nav">
         <ul class="navigation-list">
-          <li class="navigation-item"><a href="#" class="navigation-link">About</a></li>
-          <li class="navigation-item"><a href="#" class="navigation-link">your benifits</a></li>
-          <li class="navigation-item"><a href="#" class="navigation-link">tours</a></li>
-          <li class="navigation-item"><a href="#" class="navigation-link">stiores</a></li>
-          <li class="navigation-item"><a href="#" class="navigation-link">book now</a></li>
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">About</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">your benifits</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">tours</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">stiores</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">book now</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -203,7 +213,7 @@
       <!-- feature section ends -->
 
       <!-- avatar section starts -->
-      <section class="section-avatar">
+      <section class="section-avatar" id="section-avatar">
         <div class="u-center-text u-margin-bottom-8">
           <h2 class="heading-secondary">
             Avatars of lord shiva
@@ -240,7 +250,7 @@
                       of Lord Ram.
                     </p>
                   </div>
-                  <a href="#" class="btn btn-white">See More</a>
+                  <a href="#popup" class="btn btn-white">See More</a>
                 </div>
               </div>
             </div>
@@ -277,7 +287,7 @@
                       of Brahma for twelve years and roam as a Bhikshatana.
                     </p>
                   </div>
-                  <a href="#" class="btn btn-white">See More</a>
+                  <a href="#popup" class="btn btn-white">See More</a>
                 </div>
               </div>
             </div>
@@ -314,7 +324,7 @@
                       respectively.
                     </p>
                   </div>
-                  <a href="#" class="btn btn-white">See More</a>
+                  <a href="#popup" class="btn btn-white">See More</a>
                 </div>
               </div>
             </div>
@@ -426,22 +436,35 @@
                 </div>
                 <div class="form-group">
                   <div class="form-radio-group">
-                  <!-- Note: there is no way that we can style this radio button. so we must need to create our own radio buttons -->
-                      <input type="radio" class="form-radio-input" id="male" name="gender" checked>
-                      <label for="male" class="form-radio-lable">
-                        <span class="form-radio-button"></span>
-                        Male
-                      </label>
+                    <!-- Note: there is no way that we can style this radio button. so we must need to create our own radio buttons -->
+                    <input
+                      type="radio"
+                      class="form-radio-input"
+                      id="male"
+                      name="gender"
+                      checked
+                    />
+                    <label for="male" class="form-radio-lable">
+                      <span class="form-radio-button"></span>
+                      Male
+                    </label>
                   </div>
                   <div class="form-radio-group">
-                      <input type="radio" class="form-radio-input" id="female" name="gender">
-                      <label for="female" class="form-radio-lable">
-                          <span class="form-radio-button"></span>
-                        Female
-                      </label>
+                    <input
+                      type="radio"
+                      class="form-radio-input"
+                      id="female"
+                      name="gender"
+                    />
+                    <label for="female" class="form-radio-lable">
+                      <span class="form-radio-button"></span>
+                      Female
+                    </label>
                   </div>
                   <div class="form-radio-group u-margin-top-3">
-                    <button type="submit" class="btn btn-purple">Contact &rarr;</button>
+                    <button type="submit" class="btn btn-purple">
+                      Contact &rarr;
+                    </button>
                   </div>
                 </div>
               </form>
@@ -453,26 +476,76 @@
 
     <footer class="footer">
       <div class="footer-logo-box">
-        <img src="./images/shiva-logo-256x256.png" alt="Logo" class="footer-logo">
+        <img
+          src="./images/shiva-logo-256x256.png"
+          alt="Logo"
+          class="footer-logo"
+        />
       </div>
       <div class="row">
         <div class="col-1-of-2">
           <div class="footer-navigation">
             <ul class="footer-list">
-              <li class="footer-item"><a href="#" class="footer-link">Company</a></li>
-              <li class="footer-item"><a href="#" class="footer-link">Contact us</a></li>
-              <li class="footer-item"><a href="#" class="footer-link">Carrers</a></li>
-              <li class="footer-item"><a href="#" class="footer-link">Privacy</a></li>
-              <li class="footer-item"><a href="#" class="footer-link">Terms</a></li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Company</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Contact us</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Carrers</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Privacy</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Terms</a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="col-1-of-2">
           <p class="footer-copyright">
-            Built by <a href="#" class="footer-link">Darshan Vaghela</a> Copyright &copy; by Darshan Vaghela
+            Built by
+            <a href="#" class="footer-link">Darshan Vaghela</a> Copyright &copy;
+            by Darshan Vaghela
           </p>
         </div>
       </div>
     </footer>
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <div class="popup-left">
+          <img
+            src="./images/somanath-jyotirling-temple.jpg"
+            alt="temple-1"
+            class="popup-img"
+          />
+          <img
+            src="./images/kedarnath-jyotirlinga-temple.jpg"
+            alt="temple-2"
+            class="popup-img"
+          />
+        </div>
+        <div class="popup-right">
+          <a href="#section-avatar" class="popup-close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-2">Start Explore Now</h2>
+          <h3 class="heading-tertiary">
+            Important &ndash; Please read these terms before explore
+          </h3>
+          <p class="popup-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+            distinctio laborum, iste voluptatum ea esse alias corporis veritatis
+            eligendi sunt eveniet ipsam quaerat sint at. Laborum reiciendis rem
+            nulla tenetur! Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Ab tenetur deleniti illum nobis ipsum itaque saepe aliquid
+            doloremque inventore porro, quibusdam quidem dolorem eaque
+            molestiae! Molestias est ducimus eligendi accusantium?
+          </p>
+          <a href="#" class="btn btn-purple">Explore Now</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
