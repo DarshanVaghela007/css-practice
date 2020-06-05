@@ -24,6 +24,9 @@ body {
   color: #777;
   margin: 2.5rem;
   box-sizing: border-box; }
+  @media (max-width: 56.25em) {
+    body {
+      margin: 0; } }
 
 @keyframes header-main-slide-effect {
   from {
@@ -52,7 +55,8 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  text-align: center; }
   .heading-primary-main {
     display: block;
     letter-spacing: 3.5rem;
@@ -60,12 +64,20 @@ body {
     animation: header-main-slide-effect;
     animation-timing-function: ease-out;
     animation-duration: 1s; }
+    @media (max-width: 37.5em) {
+      .heading-primary-main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary-sub {
     display: block;
     font-size: 4rem;
     letter-spacing: calc(1.4rem + 0.6px);
     animation: header-sub-slide-effect 1s ease-out;
     margin-bottom: 4rem; }
+    @media (max-width: 37.5em) {
+      .heading-primary-sub {
+        letter-spacing: .5rem;
+        font-size: 3rem; } }
 
 .heading-secondary {
   font-size: 4rem;
@@ -733,7 +745,8 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  text-align: center; }
   .heading-primary-main {
     display: block;
     letter-spacing: 3.5rem;
@@ -741,12 +754,20 @@ body {
     animation: header-main-slide-effect;
     animation-timing-function: ease-out;
     animation-duration: 1s; }
+    @media (max-width: 37.5em) {
+      .heading-primary-main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary-sub {
     display: block;
     font-size: 4rem;
     letter-spacing: calc(1.4rem + 0.6px);
     animation: header-sub-slide-effect 1s ease-out;
     margin-bottom: 4rem; }
+    @media (max-width: 37.5em) {
+      .heading-primary-sub {
+        letter-spacing: .5rem;
+        font-size: 3rem; } }
 
 .heading-secondary {
   font-size: 4rem;

@@ -33,4 +33,7 @@ body {
   color: $body-color;
   margin: 2.5rem;
   box-sizing: border-box;
+  @include respond(tab-port) {
+    margin: 0;
+  }
 }
